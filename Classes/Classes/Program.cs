@@ -1,4 +1,4 @@
-using Classes.Data;
+using courseunits.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,11 +8,13 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
+//defines where the sql server is 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
+//defining the type of database the project is using 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
-builder.Services.AddControllersWithViews();
+
+builder.Services.AddControllersWithViews(); 
 
 var app = builder.Build();
 

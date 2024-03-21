@@ -1,4 +1,4 @@
-﻿namespace Classes.Models
+﻿namespace courseunits.Models
 {
     public class Professers
     {
